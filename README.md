@@ -1,6 +1,6 @@
 # Age Calculator App
 
-![Design preview](./assets/images/preview.jpg)
+![Design preview](preview.jpg)
 
 A Frontend Mentor challenge to build an age calculator app with fully validated input and an elegant UI.
 
