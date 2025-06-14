@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* Primary */
+  --purple-500: hsl(259, 100%, 65%);
+  --red-400: hsl(0, 100%, 67%);
+
+  /* Neutral */
+  --white: hsl(0, 100%, 100%);
+  --grey-100: hsl(0, 0%, 94%);
+  --grey-200: hsl(0, 0%, 86%);
+  --grey-500: hsl(0, 1%, 44%);
+  --black: hsl(0, 0%, 0%);
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--grey-100);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+.box {
+  width: 50%;
+  height: 650px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 30px 30px 230px 30px;
+  box-sizing: border-box;
+}
+
+.box .top {
+  display: flex;
+  justify-content: start;
+  padding: 60px 0px 0px 50px;
+  gap: 20px;
+}
+
+.box .top .inp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+/* Error showing */
+.box .top .error1::after {
+  content: "Must be a valid date";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--red-400);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.box .top .error2::after {
+  content: "Must be a valid Month";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--red-400);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.box .top .error3::after {
+  content: "Must be in the past";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--red-400);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.box .top .error4::after {
+  content: "This field is required";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--red-400);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.box .top .inp p {
+  font-size: 15px;
+  color: var(--grey-500);
+}
+
+/* error */
+.box .top .inp p.error {
+  color: var(--red-400);
+}
+
+.box .top .inp .inpu {
+  background-color: transparent !important;
+  padding: 20px;
+  height: 30px;
+  width: 120px;
+  font-size: 30px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 2px solid var(--grey-200);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.box .top .inp .inpu::placeholder {
+  font-weight: 700;
+  color: var(--grey-500);
+}
+
+.box .top .inp .inpu:focus {
+  background-color: transparent !important;
+  border: 2px solid var(--purple-500);
+  outline: none;
+  caret-color: var(--purple-500);
+}
+
+/* error */
+.box .top .inp .inpu.error {
+  background-color: transparent !important;
+  border: 2px solid var(--red-400);
+  outline: none;
+  caret-color: var(--red-400);
+}
+
+.inpu:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--black) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.box .middle {
+  margin: 60px 0 0 50px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.box .middle .line {
+  width: 90%;
+  height: 1px;
+  background-color: var(--grey-200);
+}
+
+.box .middle .btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--purple-500);
+  display: grid;
+  place-content: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  right: 5px;
+  cursor: pointer;
+  user-select: none;
+  /* For not getting highlighting/selection while clicked/pressed */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  outline: none;
+  -webkit-touch-callout: none;
+}
+
+.box .middle .btn:active {
+  background-color: var(--black);
+}
+
+.box .bottom {
+  margin: 20px 0 0 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box .bottom div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.box .bottom div .dash {
+  font-size: 80px;
+  font-weight: 800;
+  font-style: italic;
+  color: var(--purple-500);
+  justify-self: center;
+}
+
+.box .bottom div h1 {
+  font-size: 80px;
+  font-weight: 800;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 1200px) {
+  .box {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .box {
+    height: 750px;
+  }
+  .box .middle {
+    margin-top: 100px;
+  }
+  .box .middle .btn {
+    right: 40%;
+  }
+  .box .bottom {
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-width: 795px) {
+  .box {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .box {
+    width: 90%;
+  }
+  .box .top .inp .inpu {
+    width: 85px;
+  }
+}
+
+@media only screen and (max-width: 584px) {
+  .box {
+    width: 90%;
+  }
+  .box .top .inp .inpu {
+    width: 80px;
+  }
+  .box .bottom div h1 {
+    font-size: 70px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .box {
+    width: 90%;
+  }
+  .box .top .inp .inpu {
+    width: 70px;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .box {
+    width: 95%;
+  }
+  .box .top .day .inpu,
+  .box .top .month .inpu {
+    width: 50px;
+    font-size: 25px;
+  }
+  .box .bottom div h1 {
+    font-size: 60px;
+  }
+  .box .middle .btn {
+    right: 30%;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .box {
+    width: 100%;
+    height: 700px;
+    align-self: flex-start;
+  }
+
+  .box .top .day .inpu,
+  .box .top .month .inpu {
+    width: 50px;
+    font-size: 25px;
+  }
+  .box .bottom div h1 {
+    font-size: 50px;
+  }
+  .box .middle .btn {
+    right: 30%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .box {
+    width: 100%;
+    height: 700px;
+    align-self: flex-start;
+  }
+
+  .box .top {
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box .top .day .inpu,
+  .box .top .month .inpu {
+    width: 35px;
+    font-size: 25px;
+  }
+
+  .box .bottom div {
+    gap: 0px;
+  }
+
+  .box .bottom div h1 {
+    font-size: 30px;
+  }
+  .box .middle .btn {
+    right: 30%;
+  }
+  .box .top .error2::after {
+    content: "Must be a valid Month";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 10px;
+    font-size: 10px;
+    color: var(--red-400);
+    font-weight: 400;
+    font-style: italic;
+  }
+}
